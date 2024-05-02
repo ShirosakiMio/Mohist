@@ -259,14 +259,14 @@ def sharedDeps = {
     installer 'com.mojang:datafixerupper:6.0.8'
     installer 'com.github.oshi:oshi-core:6.4.0'
 
-    installer 'io.netty:netty-buffer:4.1.82.Final'
-    installer 'io.netty:netty-codec:4.1.82.Final'
-    installer 'io.netty:netty-common:4.1.82.Final'
-    installer 'io.netty:netty-handler:4.1.82.Final'
-    installer 'io.netty:netty-resolver:4.1.82.Final'
-    installer 'io.netty:netty-transport:4.1.82.Final'
-    installer 'io.netty:netty-transport-classes-epoll:4.1.82.Final'
-    installer 'io.netty:netty-transport-native-unix-common:4.1.82.Final'
+    installer 'io.netty:netty-buffer:4.1.107.Final'
+    installer 'io.netty:netty-codec:4.1.107.Final'
+    installer 'io.netty:netty-common:4.1.107.Final'
+    installer 'io.netty:netty-handler:4.1.107.Final'
+    installer 'io.netty:netty-resolver:4.1.107.Final'
+    installer 'io.netty:netty-transport:4.1.107.Final'
+    installer 'io.netty:netty-transport-classes-epoll:4.1.107.Final'
+    installer 'io.netty:netty-transport-native-unix-common:4.1.107.Final'
 
     // Paper start
     installer "net.kyori:adventure-api:${ADVENTURE_VERSION}"
@@ -691,7 +691,7 @@ project(':mohist') {
         archiveExtension = 'jar'
         archiveBaseName = 'mohist'
         archiveVersion = '1.20.1-' + MOHIST_VERSION
-        destinationDirectory = file('build/libs')
+        destinationDirectory = file('/home/runner/work/Mohist/Mohist/build/libs')
 
         def CLASS_PATH = getArtifacts(project, project.configurations.installer, false).values().collect { "libraries/${it.downloads.artifact.path}" } +
                 [
@@ -699,8 +699,8 @@ project(':mohist') {
                         "libraries/net/minecraft/server/${MC_VERSION}-${MCP_VERSION}/server-${MC_VERSION}-${MCP_VERSION}-extra.jar",
                         "libraries/cpw/mods/bootstraplauncher/1.1.2/bootstraplauncher-1.1.2.jar",
                         "libraries/net/minecraftforge/installertools/1.4.1/installertools-1.4.1.jar",
-                        "libraries/io/netty/netty-transport-native-epoll/4.1.82.Final/netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar",
-                        "libraries/io/netty/netty-transport-native-epoll/4.1.82.Final/netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar"
+                        "libraries/io/netty/netty-transport-native-epoll/4.1.107.Final/netty-transport-native-epoll-4.1.107.Final-linux-x86_64.jar",
+                        "libraries/io/netty/netty-transport-native-epoll/4.1.107.Final/netty-transport-native-epoll-4.1.107.Final-linux-aarch_64.jar"
                 ]
         def MODULE_PATH = getArtifacts(project, project.configurations.moduleonly, false).values().collect { "libraries/${it.downloads.artifact.path}" }
         def tokens = [
