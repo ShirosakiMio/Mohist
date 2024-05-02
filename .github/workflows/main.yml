@@ -1,0 +1,32 @@
+name: Test and build mohist 1.20.1
+
+on:
+  push:
+    branches: [ 1.20.1 ]
+  pull_request:
+    branches: [ 1.20.1 ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK 17
+      uses: actions/setup-java@v1
+      with:
+        java-version: 17
+    - name: Setup mohist 1.20.1
+      run: |
+        chmod +x ./gradlew
+        ./gradlew setup
+    - name: Build mohist 1.20.1
+      run: |
+        chmod +x ./gradlew
+        ./gradlew mohistJar
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        path: build/libs/
